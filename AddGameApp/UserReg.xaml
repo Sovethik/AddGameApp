@@ -1,0 +1,81 @@
+﻿<Window x:Class="AddGameApp.UserReg"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AddGameApp"
+        mc:Ignorable="d"
+        Title="AddGame" Height="450" Width="600"
+        Icon="/Image/iconGame.png"
+        >
+    <Grid Background="#424242">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Background="#2b2b2b"></StackPanel>
+
+        <TextBlock FontFamily="Comic Sans MS" FontSize="26" Text="Регистрация" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+
+        <StackPanel Grid.Row="1" VerticalAlignment="Top">
+            <Grid>
+
+                <Border BorderBrush="#919191" Background="#5e5e5e" BorderThickness="4" CornerRadius="10" Margin="5" HorizontalAlignment="Left">
+                    <StackPanel HorizontalAlignment="Left" Width="270">
+            
+                
+                        <StackPanel Margin="5" HorizontalAlignment="Left">
+                            <TextBlock Text="Фамилия *" Foreground="#5ca3ff" HorizontalAlignment="Left" FontFamily="Comic Sans MS" FontSize="14" Width="100"></TextBlock>
+                            <TextBox x:Name="TxtlastName" Text="{Binding lastName}" Foreground="White" FontFamily="Comic Sans MS" FontSize="16" Width="240" Background="#383838"></TextBox>
+                        </StackPanel>
+
+                        <StackPanel Margin="5" HorizontalAlignment="Left">
+                            <TextBlock Text="Имя *" Foreground="#5ca3ff" HorizontalAlignment="Left" FontFamily="Comic Sans MS" FontSize="14" Width="100"></TextBlock>
+                            <TextBox x:Name="TxtFirstName" Text="{Binding firstName}" Foreground="White" FontFamily="Comic Sans MS" FontSize="16" Width="240" Background="#383838"></TextBox>
+                        </StackPanel>
+
+                        <StackPanel Margin="5" HorizontalAlignment="Left">
+                            <TextBlock Text="Отчество" Foreground="#5ca3ff" HorizontalAlignment="Left" FontFamily="Comic Sans MS" FontSize="14" Width="100"></TextBlock>
+                            <TextBox x:Name="TxtPatronymic" Text="{Binding patronimyc}" Foreground="White" FontFamily="Comic Sans MS" FontSize="16" Width="240" Background="#383838"></TextBox>
+                        </StackPanel>
+
+                    </StackPanel>
+                </Border>
+
+                <Border BorderBrush="#919191" Background="#5e5e5e" BorderThickness="4" CornerRadius="10" Margin="5" HorizontalAlignment="Right">
+
+                    <StackPanel Height="170" VerticalAlignment="Top" Width="270">
+                        <StackPanel Margin="5" >
+                            <TextBlock Text="Логин *" Foreground="#5ca3ff" HorizontalAlignment="Left" FontFamily="Comic Sans MS" FontSize="14" Width="100"></TextBlock>
+                            <TextBox x:Name="TxtLogin" Text="{Binding login}" Foreground="White" FontFamily="Comic Sans MS" FontSize="16" Width="240" Background="#383838" HorizontalAlignment="Left"></TextBox>
+                        </StackPanel>
+
+                        <StackPanel Margin="5">
+                            <TextBlock Text="Пароль *" Foreground="#5ca3ff" HorizontalAlignment="Left" FontFamily="Comic Sans MS" FontSize="14" Width="100"></TextBlock>
+                            <TextBox x:Name="TxtPassword" Text="{Binding password}" Foreground="White" FontFamily="Comic Sans MS" FontSize="16" Width="240" Background="#383838" HorizontalAlignment="Left"></TextBox>
+                        </StackPanel>
+
+                        <StackPanel Margin="5">
+                            <TextBlock Text="Повторите пароль *" Foreground="#5ca3ff" HorizontalAlignment="Left" FontFamily="Comic Sans MS" FontSize="14" Width="140"></TextBlock>
+                            <TextBox x:Name="TxtRepeatPassword" Foreground="White" FontFamily="Comic Sans MS" FontSize="16" Width="240" Background="#383838" HorizontalAlignment="Left"></TextBox>
+                        </StackPanel>
+
+                    </StackPanel>
+                </Border>
+            
+        </Grid>
+            <Border BorderBrush="#919191" Background="#5e5e5e" BorderThickness="4" CornerRadius="10" Margin="5" Width="380" HorizontalAlignment="Left"> 
+                <StackPanel Margin="5" Width="380">
+                    <TextBlock Text="Email *" Foreground="#5ca3ff" HorizontalAlignment="Left" FontFamily="Comic Sans MS" FontSize="14" Width="140"></TextBlock>
+                    <TextBox x:Name="TxtEmail" Text="{Binding email}" Foreground="White" FontFamily="Comic Sans MS" FontSize="16" Width="360" Background="#383838" HorizontalAlignment="Left"></TextBox>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+
+
+        <Button x:Name="BtnBack" Click="BtnBack_Click"  Grid.Row="1" Content="Назад" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10" Height="30" Width="50" Style="{DynamicResource Button_1}"></Button>
+        <Button x:Name="BtnReg" Click="BtnReg_Click" Grid.Row="1" Content="Зарегистрироваться" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10" Height="30" Width="160" Style="{DynamicResource Button_1}"></Button>
+        
+    </Grid>
+</Window>

@@ -1,0 +1,83 @@
+﻿<Page x:Class="AddGameApp.UserPage.UserLibrary"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AddGameApp.UserPage"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="UserLibrary">
+
+    <Grid Background="#2b2b2b">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+
+        <TextBlock x:Name="TxtLibrary" Margin="10" VerticalAlignment="Top" FontSize="26" FontFamily="Comic Sans MS" Foreground="White">Библиотека</TextBlock>
+
+
+        <ListView   Width="500" HorizontalAlignment="Left" Name="listGame" Grid.Column="0" Grid.Row="1" Background="#424242" ScrollViewer.HorizontalScrollBarVisibility="Hidden" BorderBrush="#424242">
+
+
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                <StackPanel x:Name="panel" HorizontalAlignment="Left" Margin="2" Width="550">
+                                    <Grid Margin="2" HorizontalAlignment="Left">
+                                        <Button x:Name="BtnDataGame" Click="BtnDataGame_Click" Width="470" Style="{DynamicResource ButtonProduct}" BorderBrush="Transparent" HorizontalContentAlignment="Left">
+                                            <StackPanel Orientation="Horizontal">
+
+
+                                                <StackPanel Margin="5" Width="770" Orientation="Horizontal">
+                                                    <Image HorizontalAlignment="Left" Margin="5 0 0 0" Height="70" Width="95" Name="iconGame" Source="{Binding Path=Games.FullPath}"></Image>
+                                                    <StackPanel>
+                                                        <TextBlock Foreground="White" FontSize="18" Text="{Binding Games.name}" VerticalAlignment="Center" Margin="5"></TextBlock>
+                                                        <TextBlock Foreground="#c4c4c4" FontSize="10" Text="{Binding Games.GameGenre.genre}" VerticalAlignment="Center" Margin="5"></TextBlock>
+                                                    </StackPanel>
+                                                </StackPanel>
+
+                                            </StackPanel>
+                                        </Button>
+
+                                    </Grid>
+                                </StackPanel>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="panel" Property="Background" Value="Transparent"></Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+
+        </ListView>
+
+        <StackPanel VerticalAlignment="Top"  Grid.Row="1" Grid.Column="1" Background="#545454">
+            <Grid Margin="5">
+               
+                <Image x:Name="ImageGame" Height="190" Width="300"></Image>
+                <Border x:Name="BorderImage" BorderBrush="#424242" BorderThickness="10" CornerRadius="15" Width="305" Height="190"></Border>
+            </Grid>
+
+            <TextBlock x:Name="TxtNameGame" Foreground="White" FontSize="20" FontFamily="Comic Sans MS" Margin="10" HorizontalAlignment="Center"></TextBlock>
+            <StackPanel Orientation="Horizontal" Width="140">
+                <TextBlock x:Name="TxtTextKey" Text="Ключ:" FontSize="14" Foreground="White" Visibility="Hidden" FontFamily="Comic Sans MS" Margin="2"></TextBlock>
+                <TextBlock x:Name="TxtKeyGame" FontSize="14" Foreground="White" FontFamily="Comic Sans MS" Background="Transparent" Margin="2"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+
+
+    </Grid>
+</Page>

@@ -1,0 +1,44 @@
+﻿<Page x:Class="AddGameApp.DeveloperPage.EnterData"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AddGameApp.DeveloperPage"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="1000"
+      Title="EnterData">
+
+    <Grid Background="#424242">
+        <Border Background="#5e5e5e" BorderBrush="#636363" BorderThickness="10" Width="410" Height="310">
+            <Grid>
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <TextBlock FontFamily="Comic Sans MS" FontSize="16" Foreground="White" Text="Название компании:" Margin="5" Width="160"></TextBlock>
+                        <TextBox x:Name="TxtNameBrand" FontFamily="Comic Sans MS" FontSize="16" Foreground="White" Width="200" Margin="5" Background="#303030"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <TextBlock FontFamily="Comic Sans MS" FontSize="16" Foreground="White" Text="Страна:" Margin="5" Width="160"></TextBlock>
+                        <TextBox x:Name="TxtCountry" FontFamily="Comic Sans MS" FontSize="16" Foreground="White" Width="200" Margin="5" Background="#303030"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <TextBlock FontFamily="Comic Sans MS" FontSize="16" Foreground="White" Text="Город:" Margin="5" Width="160"></TextBlock>
+                        <TextBox x:Name="TxtCity" FontFamily="Comic Sans MS" FontSize="16" Foreground="White" Width="200" Margin="5" Background="#303030"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <TextBlock FontFamily="Comic Sans MS" FontSize="16" Foreground="White" Text="Улица:" Margin="5" Width="160"></TextBlock>
+                        <TextBox x:Name="TxtStreet" FontFamily="Comic Sans MS" FontSize="16" Foreground="White" Width="200" Margin="5" Background="#303030"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <TextBlock FontFamily="Comic Sans MS" FontSize="16" Foreground="White" Text="Дом:" Margin="5" Width="160"></TextBlock>
+                        <TextBox x:Name="TxtHome" FontFamily="Comic Sans MS" FontSize="16" Foreground="White" Width="200" Margin="5" Background="#303030"></TextBox>
+                    </StackPanel>
+                    <StackPanel Margin="5">
+                        <Button x:Name="BtnEnter" Click="BtnEnter_Click" Content="Войти" Style="{DynamicResource Button_4}" Width="100" Height="30" FontSize="18"></Button>
+                        <Button x:Name="BtnBack" Click="BtnBack_Click" Content="Вернуться в магазин" Style="{DynamicResource Button_3}" Foreground="White"></Button>
+                    </StackPanel>
+
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

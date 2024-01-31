@@ -1,0 +1,218 @@
+﻿<Page x:Class="AddGameApp.UserPage.GameForm"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AddGameApp.UserPage"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="1000"
+      Title="GameForm">
+
+    <Grid Background="#424242">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="270"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="400"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <!--Для контроля размещения скидки-->
+        <TextBlock x:Name="ControlDiscountTxt" Visibility="Hidden" Text="{Binding StrDiscount}"></TextBlock>
+
+        <TextBlock Grid.Column="1" Text="{Binding name}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="26" FontFamily="Comic Sans MS"></TextBlock>
+        <TextBlock Grid.Column="2" Text="Системные требования:" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" FontSize="18" FontFamily="Comic Sans MS"></TextBlock>
+        <!--<TextBlock Grid.Column="0" Text="Разработчик:" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" FontSize="18" FontFamily="Comic Sans MS"></TextBlock>-->
+
+        <Border Grid.Column="2" Grid.Row="1" Background="#7a7a7a" Width="250" Height="170" CornerRadius="10" Margin="10" VerticalAlignment="Top">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="OC:" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontSize="14" FontFamily="Comic Sans MS"></TextBlock>
+                    <TextBlock Text="{Binding OC.name}" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#c4c4c4" FontSize="12" FontFamily="Comic Sans MS"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Процессор:" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontSize="14" FontFamily="Comic Sans MS"></TextBlock>
+                    <TextBlock Text="{Binding CPU.ManufacturersCPU.name}" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#c4c4c4" FontSize="12" FontFamily="Comic Sans MS"></TextBlock>
+                    <TextBlock Text="{Binding CPU.name}" Margin="0 5" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#c4c4c4" FontSize="12" FontFamily="Comic Sans MS"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Видеокарта:" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontSize="14" FontFamily="Comic Sans MS"></TextBlock>
+                    <TextBlock Text="{Binding GPU.ManufacturersGPU.name}" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#c4c4c4" FontSize="12" FontFamily="Comic Sans MS"></TextBlock>
+                    <TextBlock Text="{Binding GPU.name}" Margin="0 5" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#c4c4c4" FontSize="12" FontFamily="Comic Sans MS"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Оперативная память:" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontSize="14" FontFamily="Comic Sans MS"></TextBlock>
+                    <TextBlock Text="{Binding RAM}" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#c4c4c4" FontSize="12" FontFamily="Comic Sans MS"></TextBlock>
+                    <TextBlock Text="Гб" Margin="0 5" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#c4c4c4" FontSize="12" FontFamily="Comic Sans MS"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Место на диске:" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontSize="14" FontFamily="Comic Sans MS"></TextBlock>
+                    <TextBlock Text="{Binding diskSpace}" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#c4c4c4" FontSize="12" FontFamily="Comic Sans MS"></TextBlock>
+                    <TextBlock Text="Гб" Margin="0 5" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#c4c4c4" FontSize="12" FontFamily="Comic Sans MS"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <Button x:Name="BtnFavorits" Content="В избранное" Click="BtnFavorites_Click" Grid.Column="2" Grid.Row="1" Width="120" Height="30" VerticalAlignment="Bottom" Margin="10" Style="{DynamicResource Button_4}"></Button>
+        <Button x:Name="BtnDeleteFavorite" Visibility="Hidden" Height="30" Content="Убрать из избранного" Click="BtnDeleteFavorite_Click" Style="{DynamicResource Button_4}" FontFamily="Comic Sans MS" Margin="10" FontSize="20" Width="215" Grid.Column="2" Grid.Row="1" VerticalAlignment="Bottom"></Button>
+        <Border Grid.Row="2" Grid.Column="2" Background="#7a7a7a" Width="250" Height="120" CornerRadius="10" VerticalAlignment="Top">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Разработчик:" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontSize="14" FontFamily="Comic Sans MS"></TextBlock>
+                    <TextBlock Text="{Binding Developers.name}" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#c4c4c4" FontSize="12" FontFamily="Comic Sans MS"></TextBlock>
+                </StackPanel>
+
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Дата релиза:" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontSize="14" FontFamily="Comic Sans MS"></TextBlock>
+                        <TextBlock Text="{Binding releaseDate, StringFormat={}{0:dd.MM.yyyy}}" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#c4c4c4" FontSize="12" FontFamily="Comic Sans MS"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Режим:" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontSize="14" FontFamily="Comic Sans MS"></TextBlock>
+                        <TextBlock Text="{Binding GameMode.mode}" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#c4c4c4" FontSize="12" FontFamily="Comic Sans MS"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Жанр:" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontSize="14" FontFamily="Comic Sans MS"></TextBlock>
+                        <TextBlock Text="{Binding GameGenre.genre}" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#c4c4c4" FontSize="12" FontFamily="Comic Sans MS"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+
+            </StackPanel>
+
+        </Border>
+
+        <Border x:Name="BorderBuy" Grid.Row="2" Grid.Column="2" Background="#7a7a7a" Width="250" Height="70" CornerRadius="10" VerticalAlignment="Bottom" Margin="20">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Name="TxtPopUpPrice" Text="{Binding price, StringFormat=0.00}" TextDecorations="Strikethrough" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#5ca3ff" FontSize="12" FontFamily="Comic Sans MS">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Style.Triggers>
+                                        <MultiDataTrigger>
+                                            <MultiDataTrigger.Conditions>
+                                                <Condition Binding="{Binding ElementName=ControlDiscountTxt, Path=Text.Length}" Value="0"></Condition>
+                                            </MultiDataTrigger.Conditions>
+                                            <Setter Property="Visibility" Value="Hidden"></Setter>
+                                            <Setter Property="Height" Value="15"></Setter>
+                                        </MultiDataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                        <TextBlock Foreground="White" FontSize="12" Text="Руб." HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 5 0 0" Width="30">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Style.Triggers>
+                                        <MultiDataTrigger>
+                                            <MultiDataTrigger.Conditions>
+                                                <Condition Binding="{Binding ElementName=ControlDiscountTxt, Path=Text.Length}" Value="0"></Condition>
+                                            </MultiDataTrigger.Conditions>
+                                            <Setter Property="Visibility" Value="Hidden"></Setter>
+                                            <Setter Property="Height" Value="15"></Setter>
+                                        </MultiDataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Name="TxtPrice"  Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center"  FontSize="16" FontFamily="Comic Sans MS">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Style.Triggers>
+                                        <MultiDataTrigger>
+                                            <MultiDataTrigger.Conditions>
+                                                <Condition Binding="{Binding ElementName=ControlDiscountTxt, Path=Text.Length}" Value="0"></Condition>
+                                            </MultiDataTrigger.Conditions>
+                                            <Setter Property="Foreground" Value="#5ca3ff"></Setter>
+                                            <Setter Property="Text" Value="{Binding price, StringFormat=0.00}"></Setter>
+                                        </MultiDataTrigger>
+                                        <MultiDataTrigger>
+                                            <MultiDataTrigger.Conditions>
+                                                <Condition Binding="{Binding ElementName=TxtPopUpPrice, Path=Visibility}" Value="Visible"></Condition>
+                                            </MultiDataTrigger.Conditions>
+                                            <Setter Property="Foreground" Value="#3af040"></Setter>
+                                            <Setter Property="Text" Value="{Binding StrDiscount, StringFormat=0.00}"></Setter>
+                                        </MultiDataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                        <TextBlock Foreground="White" FontSize="12" Text="Руб." HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 5 0 0" Width="30"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+                <Button x:Name="BtnAddCart"  Click="BtnAddCart_Click"  Style="{DynamicResource Button_1}" Background="#1f1f1f" Margin="30 10 0 0"  Width="100" Height="30" FontFamily="Comic Sans MS" FontSize="16" Content="В корзину">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+
+                            <Border Background="{TemplateBinding Background}" CornerRadius="10" BorderBrush="#1f1f1f" BorderThickness="2">
+                                <Grid>
+                                    <ContentPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" ContentSource ="{TemplateBinding Content}">
+
+                                    </ContentPresenter>
+                                </Grid>
+                            </Border>
+
+
+                            <ControlTemplate.Triggers>
+                                <EventTrigger RoutedEvent="Button.MouseEnter">
+                                    <EventTrigger.Actions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetProperty ="FontSize" From="16" To="14" Duration="0:0:0:0.1"></DoubleAnimation>
+                                                <DoubleAnimation Storyboard.TargetProperty="Height" From="30" To="25" Duration="0:0:0:0.1"></DoubleAnimation>
+                                                <DoubleAnimation Storyboard.TargetProperty="Width" From="100" To="95" Duration="0:0:0:0.1"></DoubleAnimation>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger.Actions>
+                                </EventTrigger>
+
+                                <EventTrigger RoutedEvent="Button.MouseLeave">
+                                    <EventTrigger.Actions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetProperty="FontSize" To="16" Duration="0:0:0:0.1"></DoubleAnimation>
+                                                <DoubleAnimation Storyboard.TargetProperty="Height" To="30" Duration="0:0:0:0.1"></DoubleAnimation>
+                                                <DoubleAnimation Storyboard.TargetProperty="Width" To="100" Duration="0:0:0:0.1"></DoubleAnimation>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger.Actions>
+                                </EventTrigger>
+
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+            </StackPanel>
+        </Border>
+
+        <Border x:Name="BorderDontBuy" Visibility="Hidden" Grid.Row="2" Grid.Column="2" Background="#7a7a7a" Width="250" Height="70" CornerRadius="10" VerticalAlignment="Bottom" Margin="20">
+            <TextBlock x:Name="TxtDontBuy" FontSize="20" Text="Товар уже в корзине" FontFamily="Comic Sans MS" Foreground="White" 
+               VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        </Border>
+
+
+        <StackPanel Grid.Column="1" Grid.Row="1" Background="#5e5e5e">
+            <Image Source="{Binding Path=FullPath}" Height="200" Margin="0 30 0 0"></Image>
+            <TextBlock Text="Об игре" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#c4c4c4" FontSize="16" FontFamily="Comic Sans MS"></TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="2" Background="#5e5e5e">
+            <TextBlock Text="{Binding description}" TextWrapping="Wrap" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontSize="14" FontFamily="Comic Sans MS"></TextBlock>
+        </StackPanel>
+
+
+        <Button x:Name="BtnBAck" Click="BtnBAck_Click" Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10" FontSize="16" Style="{DynamicResource Button_1}" Width="100" Height="30">Назад</Button>
+
+    </Grid>
+</Page>

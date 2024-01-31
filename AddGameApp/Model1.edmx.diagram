@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e4136d9c081b4f008ace1d279298dcc8" Name="Diagram1" ZoomLevel="109">
+        <EntityTypeShape EntityType="AddGameBDModel.CPU" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AddGameBDModel.Developers" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AddGameBDModel.GameGenre" Width="1.5" PointX="3" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AddGameBDModel.GameMode" Width="1.5" PointX="3" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AddGameBDModel.Games" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AddGameBDModel.GPU" Width="1.5" PointX="3" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AddGameBDModel.ManufacturersCPU" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AddGameBDModel.ManufacturersGPU" Width="1.5" PointX="0.75" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AddGameBDModel.OC" Width="1.5" PointX="3" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AddGameBDModel.OrderList" Width="1.5" PointX="7.5" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AddGameBDModel.Orders" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AddGameBDModel.sysdiagrams" Width="1.5" PointX="9.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AddGameBDModel.Usesrs" Width="1.5" PointX="0.5" PointY="4.5" IsExpanded="true" />
+        <AssociationConnector Association="AddGameBDModel.FK_CPU_ManufacturersCPU" ManuallyRouted="false" />
+        <AssociationConnector Association="AddGameBDModel.FK_Games_CPU" ManuallyRouted="false" />
+        <AssociationConnector Association="AddGameBDModel.FK_Developers_Usesrs" ManuallyRouted="false" />
+        <AssociationConnector Association="AddGameBDModel.FK_Games_Developers" ManuallyRouted="false" />
+        <AssociationConnector Association="AddGameBDModel.FK_Games_GameGenre" ManuallyRouted="false" />
+        <AssociationConnector Association="AddGameBDModel.FK_Games_GameMode" ManuallyRouted="false" />
+        <AssociationConnector Association="AddGameBDModel.FK_Games_GPU" ManuallyRouted="false" />
+        <AssociationConnector Association="AddGameBDModel.FK_Games_OC" ManuallyRouted="false" />
+        <AssociationConnector Association="AddGameBDModel.FK_OrderList_Games" ManuallyRouted="false" />
+        <AssociationConnector Association="AddGameBDModel.FK_GPU_ManufacturersGPU" ManuallyRouted="false" />
+        <AssociationConnector Association="AddGameBDModel.FK_OrderList_Orders" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="AddGameBDModel.Favorites" Width="1.5" PointX="9.875" PointY="6.25" />
+        <AssociationConnector Association="AddGameBDModel.FK_Favorites_Games" />
+        <AssociationConnector Association="AddGameBDModel.FK_Favorites_Usesrs" />
+        <EntityTypeShape EntityType="AddGameBDModel.PaymentMethod" Width="1.5" PointX="2.75" PointY="3.5" />
+        <AssociationConnector Association="AddGameBDModel.FK_Orders_PaymentMethod" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

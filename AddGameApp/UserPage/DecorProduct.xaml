@@ -1,0 +1,36 @@
+﻿<Page x:Class="AddGameApp.UserPage.DecorProduct"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AddGameApp.UserPage"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="1000"
+      Title="DecorProduct">
+
+    <Grid Background="#2b2b2b">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="TxtCart" Margin="10" VerticalAlignment="Top" FontSize="26" FontFamily="Comic Sans MS" Foreground="White" >Оформление</TextBlock>
+
+
+        <Grid Grid.Row="1" Background="#424242">
+            <StackPanel Width="230" HorizontalAlignment="Left" Margin="10">
+                <TextBlock Margin="10" VerticalAlignment="Top" FontSize="20" FontFamily="Comic Sans MS" Foreground="White" >Способ оплаты</TextBlock>
+                <ComboBox Name="CmbPay" Foreground="White" SelectedValuePath="id" DisplayMemberPath="method" SelectedItem="{Binding PaymentMethod}"  FontFamily="Comic Sans MS" FontSize="16" Style="{DynamicResource CBStyleUser}" ItemContainerStyle="{DynamicResource CmBStyleConteinerUser}"></ComboBox>
+            </StackPanel>
+        </Grid>
+
+        <Button x:Name="BtnBack" Click="BtnBack_Click" Content="Назад" Width="70" HorizontalAlignment="Left" Grid.Row="2" Style="{DynamicResource Button_1}" Margin="5"></Button>
+        <Button x:Name="BtnBuy" Click="BtnBuy_Click"  Content="Оплатить" Width="90" HorizontalAlignment="Right" Grid.Row="2" Style="{DynamicResource Button_1}" Margin="5"></Button>
+        
+        
+
+    </Grid>
+    
+</Page>
