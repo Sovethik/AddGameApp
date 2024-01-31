@@ -78,6 +78,7 @@ namespace AddGameApp.UserPage
             if (neuralNetwork.IsLearn == false)
             {
                 LearningNeuralNetwork();
+
                 neuralNetwork.IsLearn = true;
 
                 try
